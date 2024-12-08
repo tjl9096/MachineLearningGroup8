@@ -1,3 +1,12 @@
+#################################################
+# Machine Learning
+# Final Group Poject
+# 
+# This file will run face recognition on the trained faces
+# of custom dataset on video files
+#################################################
+
+
 import torch
 import cv2
 import pathlib

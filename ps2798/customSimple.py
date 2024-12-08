@@ -1,3 +1,11 @@
+#################################################
+# Machine Learning
+# Final Group Poject
+# 
+# This file will run face recognition on the trained faces
+# of custom dataset on images
+#################################################
+
 import torch
 import pathlib
 temp = pathlib.PosixPath
