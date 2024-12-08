@@ -21,6 +21,10 @@ If you want to run a custom detection script, use:
 ```bash
 python customTest.py
 ```
+If you want to run only on inmage/s, update the path in customSimple and run
+```bash 
+python customSimple.py
+```
 
 This script can be customized for specific requirements or workflows.
 
@@ -33,10 +37,6 @@ This script can be customized for specific requirements or workflows.
 
 Ensure the corresponding weights files are available in the `[Large, Medium, Small]/weights/` directory.
 
-
-## **Notes**
-- Make sure your input images/videos are accessible and correctly specified in the `--source` argument.
-- Adjust the confidence threshold (`--conf`) for more or fewer detections.
 
 ---
 
@@ -62,3 +62,10 @@ python val.py --data ../custom_dataset.yaml --weights runs/train/exp/weights/bes
 ```bash
 python detect.py --weights path/to/best.pt --img 640 --conf 0.5 --source path/to/images_or_videos
 ```
+
+
+## **Notes**
+- Make sure your input images/videos are accessible and correctly specified in the `--source` argument.
+- Adjust the confidence threshold (`--conf`) for more or fewer detections.
+
+---
