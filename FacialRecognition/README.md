@@ -6,6 +6,7 @@ A robust object detection model trained to identify team members faces with YOLO
 
 ## **Setup**
 To get started, clone the repository and install the required dependencies:
+you need to be in FacialRecognition dir
 ```bash
 python3 -m venv venv
 source venv/bin/activate
