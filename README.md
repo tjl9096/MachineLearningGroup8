@@ -19,10 +19,10 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt -r yolov3/requirements.txt
 ```
-This does the model training on the coco128 dataset by converting images to garyscale for better detection of grayscale images
+One of our propsed changes does the model training on the coco128 dataset by converting images to grayscale for better detection of grayscale images
 
-Now, you should be able to run our test files: compareGrayscale.py and 
+Now, you should be able to run our test files compareGrayscale.py
 
 ---
 
-Then there is custom Dataset that we trained model yolo5 on our Faces for recognition purposes for more details refer [Custom Dataset](ps2798/README.md)
+Then there is custom Dataset that we trained model yolo5 on our Faces for recognition purposes. For more details refer to [Custom Dataset](ps2798/README.md)
