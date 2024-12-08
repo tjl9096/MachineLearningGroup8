@@ -1,7 +1,18 @@
 # MachineLearningGroup8
 Final Group Project for Intro to Machine Learning
 
-To do a train of the original model, run the following command in the ~\yolov3 directory:
-python train.py --data coco128.yaml --weights yolov5s.pt --img 640 --epochs 16
+Tyler Lapiana
+Anindhya Kushagra
+Rushil Patel
+Prateek Sharma
 
-To do a validation of the original model, run the "originalValidationTest.py" file found under the root directory
+INSTRUCTIONS:
+When cloning the repository, please run the command: "git clone --recurse-submodules https://github.com/tjl9096/MachineLearningGroup8"
+
+If you have already cloned the repository but did not clone the submodules, you can run: "git submodule update --init --recursive"
+
+You can check that the submodule has successfully been obtained if the "yolov3" directory is not empty. 
+
+Next, you will need to download the requirements. FIrst, ensure you are in the FinalGroupPoject directory. Then, please run: "pip install -r requirements.txt -r yolov3/requirements.txt"
+
+Now, you should be able to run our test files: compareGrayscale.py and 
