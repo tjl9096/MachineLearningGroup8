@@ -1,3 +1,4 @@
+
 [submodule "yolov3"]
 	path = yolov3
-	url = .\\yolov3\\
+	url = https://github.com/tjl9096/yolov3
