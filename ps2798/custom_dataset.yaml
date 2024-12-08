@@ -1,0 +1,10 @@
+path: ../datasets
+train: images/train
+val: images/val
+test: images/test
+
+names:
+    0: Anindya
+    1: Prateek
+    2: Rushil
+    3: Tyler
