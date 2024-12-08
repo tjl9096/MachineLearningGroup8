@@ -1,5 +1,10 @@
-from ultralytics import yolov5
+import torch
+import pathlib
+temp = pathlib.PosixPath
+pathlib.PosixPath = pathlib.WindowsPath
 
-model = yolov5('custom', path='runs/train/exp5/weights/best.pt')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='Small/weights/best.pt')
 
-result = model('data/images')
+result = model('custom_datasets/images/test/42b4b379-IMAG4443.jpg' )
+
+result.show()

@@ -5,12 +5,16 @@ temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
 
 # Load the YOLOv5 model
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='runs/train/exp5/weights/best.pt')
+# Change the below path to any of the below 
+# 'Small/weights/best.pt'
+# 'Medium/weights/best.pt'
+# 'Large/weights/best.pt'
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='Large/weights/best.pt')
 
 
 
 # Load video source (0 for webcam, or provide a video file path)
-video_path = 0 # 'path/to/video.mp4'  # Replace with '0' for webcam
+video_path = 0  # Replace with the path to the video file or 0 for webcam
 cap = cv2.VideoCapture(video_path)
 
 # Check if the video file or webcam is opened successfully
