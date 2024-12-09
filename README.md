@@ -7,6 +7,8 @@ Rushil Patel
 Prateek Sharma
 
 INSTRUCTIONS:
+First, our project requires the use of a GPU.
+
 When cloning the repository, please run the command: "git clone --recurse-submodules https://github.com/tjl9096/MachineLearningGroup8"
 
 If you have already cloned the repository but did not clone the submodules, you can run: "git submodule update --init --recursive"
