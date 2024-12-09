@@ -23,8 +23,8 @@ pip install -r requirements.txt -r yolov3/requirements.txt
 ```
 One of our propsed changes does the model training on the coco128 dataset by converting images to grayscale for better detection of grayscale images
 
-Now, you should be able to run our test files compareGrayscale.py
+Now, you should be able to run our test file compareGrayscale.py
 
 ---
 
-Then there is custom Dataset that we trained model yolo5 on our Faces for recognition purposes. For more details refer to [Custom Dataset](FacialRecognition/README.md)
+Then there is a custom Dataset that we trained model yolov5 on our Faces for recognition purposes. For more details refer to [Custom Dataset](FacialRecognition/README.md)
