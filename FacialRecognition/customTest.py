@@ -1,32 +1,27 @@
 #################################################
 # Machine Learning
-# Final Group Poject
+# Final Group Project
 # 
 # This file will run face recognition on the trained faces
-# of custom dataset on video files
+# of a custom dataset on video files
 #################################################
-
 
 import torch
 import cv2
 import pathlib
+from tqdm import tqdm  # For progress bar
+
 temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
 
 # Load the YOLOv5 model
-# Change the below path to any of the below 
-# 'Small/weights/best.pt'
-# 'Medium/weights/best.pt'
-# 'Large/weights/best.pt'
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='Large/weights/best.pt')
 
-
-
-# Load video source (0 for webcam, or provide a video file path)
-video_path = 0  # Replace with the path to the video file or 0 for webcam
+# Load video source
+video_path = "./IMG_3725.MOV"  # Replace with 0 for webcam
+is_webcam = video_path == 0
 cap = cv2.VideoCapture(video_path)
 
-# Check if the video file or webcam is opened successfully
 if not cap.isOpened():
     print("Error: Could not open video source.")
     exit()
@@ -35,33 +30,54 @@ if not cap.isOpened():
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 fps = int(cap.get(cv2.CAP_PROP_FPS))
+total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) if not is_webcam else None
+print(f"Video Properties: Width={frame_width}, Height={frame_height}, FPS={fps}, Total Frames={total_frames}")
 
-# Define the codec and create a VideoWriter object to save output
-out = cv2.VideoWriter('output.avi', cv2.VideoWriter_fourcc(*'XVID'), fps, (frame_width, frame_height))
+# VideoWriter for output
+out = cv2.VideoWriter('output.avi', cv2.VideoWriter_fourcc(*'MJPG'), fps, (frame_width, frame_height))
 
-# Process video frame by frame
+# Progress bar setup for non-webcam sources
+progress_bar = tqdm(total=total_frames, desc="Processing Video", unit="frame") if not is_webcam else None
+
+# Process frames
 while cap.isOpened():
     ret, frame = cap.read()
     if not ret:
-        break  # Break the loop if no frames are returned
-
-    # Perform inference on the current frame
-    results = model(frame)
-
-    # Convert results to a format suitable for OpenCV
-    rendered_frame = results.render()[0]  # Render results on the frame
-
-    # Write the rendered frame to the output file
-    out.write(rendered_frame)
-
-    # Display the frame
-    cv2.imshow('YOLOv5 Detection', rendered_frame)
-
-    # Break on 'q' key press
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+        print("No more frames or error reading video.")
         break
 
-# Release resources
+    # Resize frame to 640x640 for YOLO model
+    resized_frame = cv2.resize(frame, (640, 640))
+
+    # Inference
+    results = model(resized_frame)
+
+    # Render results
+    rendered_frames = results.render()
+    rendered_frame = rendered_frames[0]
+
+    # Resize rendered frame back to original size for saving
+    original_size_rendered_frame = cv2.resize(rendered_frame, (frame_width, frame_height))
+
+    # Write the rendered frame to the output video
+    out.write(original_size_rendered_frame)
+
+    # Display the frame if using a webcam
+    if is_webcam:
+        cv2.imshow('YOLOv5 Detection', original_size_rendered_frame)
+
+        # Break on 'q' key press
+        if cv2.waitKey(10) & 0xFF == ord('q'):
+            break
+    else:
+        # Update progress bar for video file
+        progress_bar.update(1)
+
+# Clean up resources
 cap.release()
 out.release()
+if progress_bar:
+    progress_bar.close()
 cv2.destroyAllWindows()
+
+print("Processing complete. Output saved to 'output.avi'.")

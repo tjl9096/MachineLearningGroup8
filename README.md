@@ -25,4 +25,4 @@ Now, you should be able to run our test files compareGrayscale.py
 
 ---
 
-Then there is custom Dataset that we trained model yolo5 on our Faces for recognition purposes. For more details refer to [Custom Dataset](ps2798/README.md)
+Then there is custom Dataset that we trained model yolo5 on our Faces for recognition purposes. For more details refer to [Custom Dataset](FacialRecognition/README.md)
