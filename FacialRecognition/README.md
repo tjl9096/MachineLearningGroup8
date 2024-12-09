@@ -2,6 +2,36 @@
 
 A robust object detection model trained to identify team members faces with YOLOv5.
 
+# AI Model
+```bash 
+git clone https://github.com/ultralytics/yolov5  # clone
+cd yolov5
+pip install -r requirements.txt
+```
+
+# Training Command
+```bash 
+CUDA_VISIBLE_DEVICES=8,9 python train.py --img 640 --epochs 300 --data ../custom_dataset.yaml --weights yolov5l.pt
+```
+
+# Validation
+```bash 
+python val.py --data ../custom_dataset.yaml --weights runs/train/exp/weights/best.pt --img 640
+```
+
+# detection
+```bash
+python detect.py --weights path/to/best.pt --img 640 --conf 0.5 --source path/to/images_or_videos
+```
+
+
+## **Notes**
+- Make sure your input images/videos are accessible and correctly specified in the `--source` argument.
+- Adjust the confidence threshold (`--conf`) for more or fewer detections.
+
+---
+
+For running the model without training you can use below comands to setup
 ---
 
 ## **Setup**
@@ -42,31 +72,3 @@ Ensure the corresponding weights files are available in the `[Large, Medium, Sma
 ---
 
 
-# Ai Model
-```bash 
-git clone https://github.com/ultralytics/yolov5  # clone
-cd yolov5
-pip install -r requirements.txt
-```
-
-# Training Command
-```bash 
-CUDA_VISIBLE_DEVICES=8,9 python train.py --img 640 --epochs 300 --data ../custom_dataset.yaml --weights yolov5l.pt
-```
-
-# Validation
-```bash 
-python val.py --data ../custom_dataset.yaml --weights runs/train/exp/weights/best.pt --img 640
-```
-
-# detection
-```bash
-python detect.py --weights path/to/best.pt --img 640 --conf 0.5 --source path/to/images_or_videos
-```
-
-
-## **Notes**
-- Make sure your input images/videos are accessible and correctly specified in the `--source` argument.
-- Adjust the confidence threshold (`--conf`) for more or fewer detections.
-
----
