@@ -7,6 +7,8 @@ Rushil Patel
 Prateek Sharma
 
 INSTRUCTIONS:
+First, our project requires the use of a GPU.
+
 When cloning the repository, please run the command: "git clone --recurse-submodules https://github.com/tjl9096/MachineLearningGroup8"
 
 If you have already cloned the repository but did not clone the submodules, you can run: "git submodule update --init --recursive"
@@ -25,4 +27,4 @@ Now, you should be able to run our test files compareGrayscale.py
 
 ---
 
-Then there is custom Dataset that we trained model yolo5 on our Faces for recognition purposes. For more details refer to [Custom Dataset](ps2798/README.md)
+Then there is custom Dataset that we trained model yolov5 on our Faces for recognition purposes. For more details refer to [Custom Dataset](ps2798/README.md)
