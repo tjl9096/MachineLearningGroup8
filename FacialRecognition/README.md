@@ -8,6 +8,7 @@ git clone https://github.com/ultralytics/yolov5  # clone
 cd yolov5
 pip install -r requirements.txt
 ```
+Or there is already a yolo5 folder with the model downloaded
 
 # Training Command
 ```bash 
