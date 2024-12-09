@@ -19,8 +19,11 @@ Next, you will need to download the requirements. First, ensure you are in the F
 ```bash 
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt -r yolov3/requirements.txt
+pip install -r requirements.txt
 ```
+
+This may take some time.
+
 One of our propsed changes does the model training on the coco128 dataset by converting images to grayscale for better detection of grayscale images
 
 Now, you should be able to run our test file compareGrayscale.py

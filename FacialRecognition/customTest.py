@@ -6,13 +6,14 @@
 # of a custom dataset on video files
 #################################################
 
+import os
 import torch
 import cv2
 import pathlib
 from tqdm import tqdm  # For progress bar
 
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+if os.name == 'nt':
+    pathlib.PosixPath = pathlib.WindowsPath
 
 # Load the YOLOv5 model
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='Large/weights/best.pt')

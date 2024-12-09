@@ -12,8 +12,8 @@ import os
 from pathlib import Path
 
 # Fix pathlib compatibility on Windows
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+if os.name == 'nt':
+    pathlib.PosixPath = pathlib.WindowsPath
 
 # Load YOLOv5 model
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='Small/weights/best.pt')

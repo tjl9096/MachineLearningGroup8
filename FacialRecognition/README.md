@@ -4,6 +4,7 @@ A robust object detection model trained to identify team members faces with YOLO
 
 # AI Model
 ```bash 
+cd FacialRecognition
 git clone https://github.com/ultralytics/yolov5  # clone
 cd yolov5
 pip install -r requirements.txt

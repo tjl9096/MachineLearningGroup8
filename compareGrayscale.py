@@ -13,5 +13,5 @@ base_model = YOLO("yolov5s.pt")
 grayscale_model = YOLO("yolov5s.pt")
 
 # train each of the models on the corresponding data
-base_results = base_model.train(data="coco128.yaml", epochs=5, imgsz=640)
+# base_results = base_model.train(data="coco128.yaml", epochs=5, imgsz=640)
 grayscale_results = grayscale_model.train(data="grayscale.yaml", epochs=5, imgsz=640)
