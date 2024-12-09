@@ -1,32 +1,56 @@
 # MachineLearningGroup8
 Final Group Project for Intro to Machine Learning
 
-Tyler Lapiana
-Anindhya Kushagra
-Rushil Patel
-Prateek Sharma
+Tyler Lapiana,
+Anindhya Kushagra,
+Rushil Patel,
+Prateek Sharma,
 
-INSTRUCTIONS:
+**IMPORTANT INSTRUCTIONS**:
 First, our project requires the use of a GPU.
 
-When cloning the repository, please run the command: "git clone --recurse-submodules https://github.com/tjl9096/MachineLearningGroup8"
+Second, the results of the second improvement are visual in nature, so it may be better to view the results on a system that can easily show images/videos.
 
-If you have already cloned the repository but did not clone the submodules, you can run: "git submodule update --init --recursive"
+---
 
-You can check that the submodule has successfully been obtained if the "yolov3" directory is not empty. 
+When cloning the repository, please run the command: 
+```bash
+git clone --recurse-submodules https://github.com/tjl9096/MachineLearningGroup8
+```
 
-Next, you will need to download the requirements. First, ensure you are in the FinalGroupPoject directory. Then, please run: 
+If you have already cloned the repository but did not clone the submodules, you can run: 
+```bash
+git submodule update --init --recursive
+```
+
+---
+
+Next, you will need to download the requirements. 
+
+If you did not already move into the created directory, please do so:
+```bash
+cd MachineLearningGroup8
+```
+
+Then, please run: 
 ```bash 
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
-This may take some time.
-
-One of our propsed changes does the model training on the coco128 dataset by converting images to grayscale for better detection of grayscale images.
-
-You should be able to run our test file compareGrayscale.py
+This may take some time. On average, ours took around 15 minutes.
 
 ---
 
-Then there is a custom Dataset that we trained model yolov5 on our Faces for recognition purposes. For more details refer to [Custom Dataset](FacialRecognition/README.md)
+One of our propsed changes does the model training on the coco128 dataset by converting images to grayscale for better detection of grayscale images.
+
+You should now be able to run our test file with the command
+```bash
+python compareGrayscale.py
+```
+
+---
+
+Then there is a custom Dataset that we trained model yolov5 on our Faces for recognition purposes. For more details refer to the custom dataset README: [Custom Dataset](FacialRecognition/README.md)
+
+This file is located under the FacialRecognition directory.

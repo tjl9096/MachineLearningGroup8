@@ -2,14 +2,42 @@
 
 A robust object detection model trained to identify team members faces with YOLOv5.
 
+
+## **Setup**
+For running the model without training you can use the below commands to setup
+
+If you are not in the FacialRecognition directory, please do so:
+```bash
+cd FacialRecognition
+```
+
+Next we need to download the higher version model we used to train
+
 # AI Model
 ```bash 
-cd FacialRecognition
 git clone https://github.com/ultralytics/yolov5  # clone
-cd yolov5
-pip install -r requirements.txt
 ```
-Or there is already a yolo5 folder with the model downloaded
+
+## **How to Run Detection**
+Run the detection script to detect objects in images, videos, or streams.
+
+## **Usage**
+If you want to run a custom detection script on a provided video, use:
+```bash
+python customTest.py
+```
+If you want to run only on an image/s, run:
+```bash 
+python customSimple.py
+```
+
+To see the results of these scripts, take note of where the outputs are saved as mentioned when ran. These outputs are photos, so you may need another way of viewing them.
+
+These scripts can be customized for specific requirements or workflows.
+
+---
+
+Here are the command line commands that were used in making these scripts:
 
 # Training Command
 ```bash 
@@ -33,35 +61,6 @@ python detect.py --weights path/to/best.pt --img 640 --conf 0.5 --source path/to
 
 ---
 
-For running the model without training you can use below comands to setup
----
-
-## **Setup**
-To get started, clone the repository and install the required dependencies:
-you need to be in FacialRecognition dir
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-## **How to Run Detection**
-Run the detection script to detect objects in images, videos, or streams.
-
-
-## **Usage**
-If you want to run a custom detection script, use:
-```bash
-python customTest.py
-```
-If you want to run only on inmage/s, update the path in customSimple and run
-```bash 
-python customSimple.py
-```
-
-This script can be customized for specific requirements or workflows.
-
-
 ## **Model Information**
 ### **Weights**
 - **Large**: Best for high accuracy but slower inference.
@@ -70,7 +69,4 @@ This script can be customized for specific requirements or workflows.
 
 Ensure the corresponding weights files are available in the `[Large, Medium, Small]/weights/` directory.
 
-
 ---
-
-
