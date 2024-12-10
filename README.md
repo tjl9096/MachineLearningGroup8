@@ -49,6 +49,8 @@ You should now be able to run our test file with the command
 python compareGrayscale.py
 ```
 
+There may be an error where the code cannot find the location of the grayscale database. If this is the case, you will need to modify the grayscale.yaml. You would have to change the value under "path" so that it finds the directory found at: yolov3/datasets/grayscale
+
 ---
 
 Then there is a custom Dataset that we trained model yolov5 on our Faces for recognition purposes. For more details refer to the custom dataset README: [Custom Dataset](FacialRecognition/README.md)
